@@ -46,7 +46,7 @@ function getExternal(){
     })
     .then(function(data){
         console.log(data);
-        let output = "";
+        let output = '';
         data.forEach(function(user){
             output += `<li>${user.login}</li>`
         })

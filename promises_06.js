@@ -15,7 +15,7 @@ function createPost(post) {
         setTimeout(function(){
             posts.push(post);
 
-            const error = true;
+            const error = false;
             if(!error){
                 resolve();
             }else{
@@ -27,7 +27,7 @@ function createPost(post) {
 
 function getPosts() {
 	setTimeout(function() {
-		let output = "";
+		let output = '';
 		posts.forEach(function(post){
 			output += `
 			<li>${post.title}</li>`
@@ -37,4 +37,6 @@ function getPosts() {
 }
 
 createPost({title:"Post three", body:"This is post three"})
-.then(getPosts)
+.then(getPosts).catch(function(err){
+    console.log(err);
+});

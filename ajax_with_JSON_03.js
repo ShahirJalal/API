@@ -5,35 +5,36 @@
 // JSON is using key value pairs
 // JSON can work with other languages as well
 
-// document.getElementById('btn1').addEventListener('click', loadUser);
+document.getElementById('btn1').addEventListener('click', loadUser);
 document.getElementById('btn2').addEventListener('click', loadUsers);
 
-// function loadUser(){
-//     // create XHR object
-//     const xhr = new XMLHttpRequest();
+function loadUser(){
+    // create XHR object
+    const xhr = new XMLHttpRequest();
 
-//     // Open method 
-//     xhr.open('Get', 'user_03.json', true);
+    // Open method 
+    xhr.open('Get', 'user_03.json', true);
 
-//     // Onload
-//     xhr.onload = function(){
-//         if(this.status === 200) {
-//             // console.log(this.responseText);
-//             // convert the JSON to 
-//             const user = JSON.parse(this.responseText);
-//             console.log(user);
+    // Onload
+    xhr.onload = function(){
+        if(this.status === 200) {
+            // console.log(this.responseText);
+            // convert the JSON object to JS object 
+            const user = JSON.parse(this.responseText);
+            // console.log(user);
 
-//             const output = `<ul>
-//             <li>Id: ${user.id}</li>
-//             <li>Name: ${user.name}</li>
-//             <li>Age: ${user.age}</li>
-//             </ul>`;
+            const output = `
+            <ul>
+            <li>Id: ${user.id}</li>
+            <li>Name: ${user.name}</li>
+            <li>Age: ${user.age}</li>
+            </ul>`;
 
-//             document.getElementById('user').innerHTML = output;
-//         }
-//     }
-//     xhr.send();
-// }
+            document.getElementById('user').innerHTML = output;
+        }
+    }
+    xhr.send();
+}
 
 function loadUsers(){
     // create XHR object

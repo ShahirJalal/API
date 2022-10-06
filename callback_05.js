@@ -3,31 +3,26 @@ const posts = [
     {title: 'Post two', body: 'This is post two'}
 ];
 
-function createPost(post){
-    setTimeout(function(){
-        posts.push(post);
-    }, 3000);
-}
+// function createPost(post){
+//     setTimeout(function(){
+//         posts.push(post);
+//     }, 3000);
+// }
 
-function getPost(){
-    setTimeout(function(){
-        let output = '';
-        posts.forEach(function(){
-            output += `<li>${posts.title}</li>`
-        });
-        document.body.innerHTML = output;
-    }, 1000);
-}
+// function getPost(){
+//     setTimeout(function(){
+//         let output = '';
+//         posts.forEach(function(post){
+//             output += `<li>${posts.title}</li>`
+//         });
+//         document.body.innerHTML = output;
+//     }, 1000);
+// }
 
-createPost({title: 'Post three', body: 'This is post three'});
-getPost();
+// createPost({title: 'Post three', body: 'This is post three'});
+// getPost();
 
 // ////////////////////
-
-const posts = [
-	{title:"Post One", body:"This is post one"},
-	{title:"Post Two", body:"This is post two"}
-];
 
 // function createPost(post){
 // 	setTimeout(function(){
@@ -61,7 +56,7 @@ function createPost(post, callback) {
 
 function getPosts() {
 	setTimeout(function() {
-		let output = "";
+		let output = '';
 		posts.forEach(function(post){
 			output += `
 			<li>${post.title}</li>`
